@@ -7,8 +7,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 
-import java.util.List;
-
 public interface ReviewRepository extends MongoRepository<Review, String> {
 
     Page<Review> findAll(Pageable pageable);

@@ -43,3 +43,25 @@ public class ReviewServiceImpl implements ReviewService {
         existingReview.setComment(review.getComment());
         return reviewRepository.save(existingReview);
     }
+
+    @Override
+    public void deleteReview(String id) {
+        if (!reviewRepository.existsById(id)) {
+            throw new RuntimeException("Review not found");
+        }
+        reviewRepository.deleteById(id);
+    }
+
+    @Override
+    public Review replyToReview(String reviewId, String reply) {
+        Review existingReview = reviewRepository.findById(reviewId)
+                .orElseThrow(() -> new RuntimeException("Review not found"));
+        existingReview.setAdminReply(reply);
+        return reviewRepository.save(existingReview);
+    }
+
+    @Override
+    public boolean existsByUserIdAndProductIdAndOrderId(String userId, String productId, String orderId) {
+        return reviewRepository.existsByUserIdAndProductIdAndOrderId(userId, productId, orderId);
+    }
+}

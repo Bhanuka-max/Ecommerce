@@ -3,7 +3,6 @@ package com.example.backend.order.Model;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Field;
 import java.util.Map;
 
 @Data

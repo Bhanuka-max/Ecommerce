@@ -8,9 +8,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
-import com.example.backend.order.ENUMS.OrderStatus;
-import com.example.backend.order.ENUMS.PaymentStatus;
-import com.example.backend.order.Model.OrderItem;
+import com.example.backend.order.enums.OrderStatus;
+import com.example.backend.order.enums.PaymentStatus;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor

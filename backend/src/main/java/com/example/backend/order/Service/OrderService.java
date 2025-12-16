@@ -1,10 +1,8 @@
 package com.example.backend.order.Service;
 
-import com.example.backend.order.ENUMS.OrderStatus;
-import com.example.backend.order.ENUMS.PaymentStatus;
+import com.example.backend.order.enums.OrderStatus;
 import com.example.backend.order.Model.Order;
 import com.example.backend.order.Repository.OrderRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import org.springframework.data.domain.Page;

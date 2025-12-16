@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -36,9 +37,8 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http    .cors()
-                .and()
-                .csrf(csrf -> csrf.disable()) // Disable CSRF for stateless APIs
+        http    .csrf(csrf -> csrf.disable()) // Disable CSRF for stateless APIs
+                .cors(Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**", "/oauth2/**","/api/products/**","/api/reviews/**").permitAll() // Public endpoints
                         .requestMatchers("/api/**").authenticated() // Protected endpoints

@@ -11,8 +11,6 @@ import org.springframework.http.HttpStatus;
 
 import com.example.backend.Auth.UtilSecurity.SecurityUtil;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api/reviews")
 public class ReviewController {
